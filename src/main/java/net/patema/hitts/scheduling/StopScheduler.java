@@ -8,9 +8,11 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import static net.patema.hitts.HeyItsTimeToStop.config;
+
 public class StopScheduler {
 
-    private static final int userConfigMinutes = HeyItsTimeToStop.CONFIG.minutesBeforeStopping();
+    private static final int userConfigMinutes = config.cooldown.minutesBeforeStopping;
     private static final Object lock = new Object();
     private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private static ScheduledFuture<?> cronJobFuture;
@@ -18,7 +20,7 @@ public class StopScheduler {
 
     public static void startAutoStopper(MinecraftServer server) {
         if (cronJobFuture == null) {
-            HeyItsTimeToStop.LOGGER.info("No player detected! The server will stop in "+userConfigMinutes+" minutes.");
+            HeyItsTimeToStop.LOGGER.info("No players detected! The server will shut down in "+userConfigMinutes+" minute(s).");
             cronJobFuture = scheduler.schedule(() -> {
                 synchronized (lock) {
                     server.stop(false);
@@ -32,7 +34,7 @@ public class StopScheduler {
             if (cronJobFuture != null) {
                 cronJobFuture.cancel(true);
                 cronJobFuture = null;
-                HeyItsTimeToStop.LOGGER.info("A player has joined the server, the stop task was cancelled.");
+                HeyItsTimeToStop.LOGGER.info("A player has joined the server, the cooldown has been cancelled.");
             }
         }
     }
