@@ -3,17 +3,17 @@
 	"id": "hitts",
 	"version": "${version}",
 	"name": "Hey! It's Time to Stop!",
-	"description": "A mod that will auto stop your server after a certain amount of time is nobody is connected!",
+	"description": "A mod that will auto stop your server after a certain amount of time is nobody if connected!",
 	"authors": [
 		"Patema"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/heyitstimetostop",
+		"sources": "https://github.com/PatemaAelita/HeyItsTimeToStop"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/hitts/icon.png",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"net.patema.hitts.HeyItsTimeToStop"
