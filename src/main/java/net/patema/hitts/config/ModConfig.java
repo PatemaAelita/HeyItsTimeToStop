@@ -1,12 +1,15 @@
 package net.patema.hitts.config;
 
-import net.patema.hitts.HeyItsTimeToStop;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-import io.wispforest.owo.config.annotation.Config;
-import io.wispforest.owo.config.annotation.Modmenu;
+@Config(name = "heyitstimetostop")
+public class ModConfig implements ConfigData {
+    @ConfigEntry.Gui.CollapsibleObject
+    public Cooldown cooldown = new Cooldown();
 
-@Modmenu(modId = HeyItsTimeToStop.MOD_ID)
-@Config(name = "heyitstimetostop", wrapperName = "HittsConfig")
-public class ModConfig {
-    public int minutesBeforeStopping = 15;
+    public static class Cooldown {
+        public int minutesBeforeStopping = 15;
+    }
 }
