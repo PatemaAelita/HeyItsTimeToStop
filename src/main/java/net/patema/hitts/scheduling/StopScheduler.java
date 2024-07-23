@@ -12,7 +12,7 @@ import static net.patema.hitts.HeyItsTimeToStop.config;
 
 public class StopScheduler {
 
-    private static final int userConfigMinutes = config.cooldown.minutesBeforeStopping;
+    private static final int userConfigMinutes = config.minutesBeforeStopping;
     private static final Object lock = new Object();
     private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private static ScheduledFuture<?> cronJobFuture;
@@ -20,7 +20,7 @@ public class StopScheduler {
 
     public static void startAutoStopper(MinecraftServer server) {
         if (cronJobFuture == null) {
-            HeyItsTimeToStop.LOGGER.info("No players detected! The server will shut down in "+userConfigMinutes+" minute(s).");
+            HeyItsTimeToStop.LOGGER.info("No players detected! The server will shutdown in "+userConfigMinutes+" minutes.");
             cronJobFuture = scheduler.schedule(() -> {
                 synchronized (lock) {
                     server.stop(false);
