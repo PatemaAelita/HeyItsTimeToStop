@@ -3,7 +3,7 @@
 	"id": "hitts",
 	"version": "${version}",
 	"name": "Hey! It's Time to Stop!",
-	"description": "A mod that will auto stop your server after a certain amount of time is nobody if connected!",
+	"description": "A mod that will auto shutdown your server after a custom amount of time if nobody is connected!",
 	"authors": [
 		"Patema"
 	],
@@ -11,7 +11,7 @@
 		"homepage": "https://modrinth.com/mod/heyitstimetostop",
 		"sources": "https://github.com/PatemaAelita/HeyItsTimeToStop"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/hitts/icon.png",
 	"environment": "server",
 	"entrypoints": {
@@ -23,7 +23,8 @@
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cloth-config": "~11.1.118"
 	},
 	"suggests": {
 		"another-mod": "*"
