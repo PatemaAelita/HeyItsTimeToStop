@@ -1,4 +1,5 @@
-<div align="center" style="text-align: center;">
+<div>
+<center>
 <h1>Hey! It's time to stop!</h1>
 <br>
 <a href="https://modrinth.com/mod/heyitstimetostop">
@@ -8,7 +9,9 @@
 <a href="https://github.com/PatemaAelita/HeyItsTimeToStop/">
     <img src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/github_vector.svg" width="100" height="100" alt="Github">
 </a>
+</center>
 </div>
+
 
 ---
 
@@ -19,8 +22,8 @@
 
 ## Configuration
 
-**Hey! It's time to stop!** uses [Cloth Config](https://modrinth.com/mod/cloth-config/versions) for configuration, you'll need to download it as well.
-Once both mods are in your mods folder, you'll need to start the server once for the configuration file to be generated in the config folder.
+**Hey! It's time to stop!** uses [Cloth Config](https://modrinth.com/mod/cloth-config/versions) for configuration (embbed).
+You'll need to start the server once for the configuration file to be generated in the config folder.
 After that you only need to edit the `heyitstimetostop.json5` file. 
 
 > // Should be between 5 and 60 \
