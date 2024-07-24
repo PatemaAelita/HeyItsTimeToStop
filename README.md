@@ -22,7 +22,7 @@
 
 ## Configuration
 
-**Hey! It's time to stop!** uses [Cloth Config](https://modrinth.com/mod/cloth-config/versions) for configuration (embbed).
+**Hey! It's time to stop!** uses [Cloth Config](https://modrinth.com/mod/cloth-config/versions) for configuration (embedded).
 You'll need to start the server once for the configuration file to be generated in the config folder.
 After that you only need to edit the `heyitstimetostop.json5` file. 
 
